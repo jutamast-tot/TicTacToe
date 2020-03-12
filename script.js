@@ -44,7 +44,7 @@ function turn(squareId, player) {
 }
 
 function checkWin(board, player) {
-	let plays = board.reduce((a, e, i) => 
+	let plays = board.reduce((a, e, i) =>
 		(e === player) ? a.concat(i) : a, []);
 	let gameWon = null;
 	for (let [index, win] of winCombos.entries()) {
@@ -65,11 +65,14 @@ function gameOver(gameWon) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
 	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	
+	
 }
 
 function declareWinner(who) {
 	document.querySelector(".endgame").style.display = "block";
 	document.querySelector(".endgame .text").innerText = who;
+	
 }
 
 function emptySquares() {
@@ -88,9 +91,14 @@ function checkTie() {
 		}
 		declareWinner("Tie Game!")
 		return true;
+	}else{
+		let gameWon = checkWin(origBoard, huPlayer)
+		if (gameWon) return true;
+		
 	}
 	return false;
 
 }
+
 
 
