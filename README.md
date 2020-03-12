@@ -1,4 +1,4 @@
-# TicTacToe
+# TicTacToe [Playnow](https://jutamast-tot.github.io/TicTacToe/tictactoe.html)
 
 The user stories for this app are:
 User Story: I can play a game of Tic Tac Toe with the computer.
